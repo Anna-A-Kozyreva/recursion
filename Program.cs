@@ -32,4 +32,21 @@ int Ack(int m, int n)
         return Ack(m - 1, Ack(m, n - 1));
     }
 }
-Console.WriteLine($"{Ack(3,2)}");
+Console.WriteLine($"{Ack(3, 2)}");
+
+//Задайте произвольный массив. Выведете его элементы, начиная с конца. Использовать рекурсию, не использовать циклы.
+
+int[] array = { 1, 5, 4, 3, 2, 6, 7, 9, 8 };
+
+int j = array.Length - 1;
+
+void ShowArrReversed(int[] arr, int j)
+{
+    if (j < 0)
+    {
+        return;
+    }
+    Console.Write($"{arr[j]} ");
+    ShowArrReversed(arr, j - 1);
+}
+ShowArrReversed(array, j);
